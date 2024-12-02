@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!--Esto es para los caracteres especiales, acentos, ñ, etc -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Esto es para que el ancho de la página se adapte a teléfonos-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> <!--Link de bootstrap-->
+    <title>Home</title> <!--Título de la página (el que se ve en la pestaña)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> <!--Librería de animaciones-->
+    <style>
+        body {
+            background: linear-gradient(135deg, #b0b0b0, #343a40); /*Fondo pero con transición entre colores*/
+            color: #343a40; /*Color del texto*/
+            overflow-x: hidden; /*Si hay contenido más ancho que el área visible, se ocultará en lugar de generar desplazamiento horizontal*/
+        }
+
+        .navbar {
+            background-color: #212529;  /*Color del fondo del navar*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /*Sombra*/
+        }
+        
+        .navbar .nav-link {
+            color: #ffffff !important; /*Color letra*/
+            transition: color 0.3s ease; /*Transición para el cambio de color*/
+        }
+
+        .navbar .nav-link:hover {
+            color: #00d1b2 !important; /*Transición del color cuando pones el mouse encima de los títulos del navar*/
+        }
+
+        .dropdown-menu {
+            background-color: #343a40; /*Fondo del dropdown*/
+        }
+
+        .dropdown-menu a {
+            color: #c4bebe !important; /* Color items del dropdown */
+        }
+
+        /*Sección Principal*/
+        /*Utilizo hero para que se vea mejor, más llamativo*/
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.6); /*Fondo donde esta la imagen*/
+            color: white; /*Color del texto*/
+            animation: fadeIn 1.5s ease; /*Animación de entrada*/
+        }
+
+        .hero img {
+            width: 150px; 
+            border-radius: 50%; /*Borde redondo para la imagen*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /*Sombra alrededor de la imagen*/
+        }
+
+        .hero h1 {
+            font-size: 2.5rem; /*Tamaño del titulo (Diego Navarro Sánchez)*/
+            margin-top: 20px; /*Separación entre el título y la imagen*/
+        }
+
+        .hero p {
+            font-size: 1.2rem; /*Tamaño del texto*/
+            margin-top: 10px; /*Separación entre el texto y el título*/
+            max-width: 600px; /*Ancho máximo del parrafo*/
+            margin: 10px auto; /*Esto define márgenes automáticos al lado izquierdo y derecho del texto, o sea que centra el texto horizontalmente en su contenedor*/
+            line-height: 1.6; /*Espacio entre líneas*/
+        }
+
+        .card-container {
+            display: flex; /*Esto es para el diseño de tarjeta*/
+            justify-content: center; /*Centra las tarjetas en el contenedor*/
+            gap: 20px; /*Espacio entre las tarjetas*/
+            margin-top: 40px; /*Espacio superior de antes de las tarjetas*/
+            padding-bottom: 50px; /*Espacio inferior de después de las tarjetas*/
+        }
+
+        .card {
+            background-color: #f8f9fa; /*Color de fondo de la tarjeta*/
+            border-radius: 15px; /*Bordes redondos para la tarjeta*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Sombra de la tarjeta*/
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /*Transición para el efecto hover*/
+            width: 300px; /*Separación del texto con el top de la tarjeta*/
+            padding: 20px; /*Separación entre la información (Interlineado)*/
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05); /*Efecto que agranda la tarjeta cuando pasas el mouse por encima*/
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /*Aumenta la sombra al pasar el mouse*/
+        }
+
+        .card h3 {
+            font-size: 1.5rem; /*Tamaño del título*/
+            margin-bottom: 15px; /*Espacio inferior del título*/
+            color: #343a40; /*Color del texto del título*/
+        }
+
+        .card ul {
+            list-style: disc; /*Viñeta*/ 
+            padding: 10px; /*Separación horizontal de la viñeta*/
+        }
+
+        .card ul li {
+            font-size: 1.1rem; /*Tamaño del texto de la lista en la tarjeta*/
+            padding: 5px 0; /*Espaciado superior e inferior de cada elemento del texto*/
+        }
+
+        footer { /*Pie de página*/
+            background-color: #212529; /*Color del fondo del pie de página*/
+            color: white; /*Color de la letra*/
+            text-align: center; /*Alinear la inormación al centro*/
+            padding: 20px 0; /*Espacio superior e inferior*/
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn { 
+            0% {
+                opacity: 0; /*Comienza completamente transparente*/
+                transform: translateY(30px); /*Se inicia desde abajo*/ 
+            }
+            100% {
+                opacity: 1; /*Termina completamente visible*/
+                transform: translateY(0); /*Se alinea en su posición original*/
+            }
+        }
+
+        .animate-fadeInLeft { 
+            animation: fadeInLeft 1s ease; /*Anima la entrada desde la izquierda*/
+        }
+
+        .animate-fadeInRight {
+            animation: fadeInRight 1s ease; /*Anima la entrada desde la derecha*/
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0; /*Comienza completamente transparente*/
+                transform: translateX(-50px); /*Se inicia desde la izquierda*/
+            }
+            100% {
+                opacity: 1; /*Termina completamente visible*/
+                transform: translateX(0); /*Se alinea a su posición original*/
+            }
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0; /*Comienza completamente transparente*/
+                transform: translateX(50px); /*Se inicia desde la derecha*/
+            }
+            100% {
+                opacity: 1; /*Termina completamente visible*/
+                transform: translateX(0); /*Se alinea en su posición original*/
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg p-2">
+    <div class="container d-flex justify-content-center"> <!--Centrar contenido -->
+        <a class="navbar-brand" href="index.html"> <!--Link del logo-->
+            <img src="{{ url_for('static', filename='Images/usuario.png')}}" alt="Logo" width="32"> <!--Logo del navbar-->
+        </a>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav"> <!--Lista de enlaces-->
+                <li class="nav-item"> 
+                    <a class="nav-link h5" href="index.html">Home</a> <!--Enlace a la página de inicio-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link h5" href="https://www.instagram.com/_godhi_/" target="_blank">Instagram</a> <!--Enlace a la página Instagram-->
+                </li>
+                <li class="nav-item dropdown"> <!--Dropdown (Lo que al pulsar en el se abre una selección)-->
+                    <a class="nav-link dropdown-toggle h5 ms-auto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tareas</a> <!--Nombre del dropdown (La opción que se ve al lado de Instagram y al que después de pulsar en él se abre la selección)-->     
+                    <ul class="dropdown-menu"> <!--Las opciones que vienen dentro del dropdown (La selección)-->
+                                    <!--Nombres de los apartados del dropdown-->
+                        <li><a class="dropdown-item" href="presentacion.html">Presentación</a></li> <!--Presentación-->
+                        <li><a class="dropdown-item" href="index_t1tarea2.html" target="_blank" rel="noopener noreferrer">Primer página</a></li>  <!--Primera página-->
+                        <li><a class="dropdown-item" href="git.html">GitHub</a></li>  <!--GitHub-->
+                        <li><a class="dropdown-item" href="vr.html">VR | AR</a></li>  <!--Realidad virtual-->
+                        <li><a class="dropdown-item" href="scan.html">Scan 3D</a></li> <!--Scan 3D-->
+                        <li><a class="dropdown-item" href="framework.html">Framework</a></li>  <!--Framework-->
+                        <li><a class="dropdown-item" href="hangman.html">Hangman</a></li> <!--Juego Ahorcados-->
+                        <hr class="dropdown-divider"> <!-- Línea divisora -->
+                        <li><a class="dropdown-item" href="entorno_virtual.html">Entorno Virtual</a></li> <!--Entorno virtual-->
+                        <hr class="dropdown-divider"> <!-- Línea divisora -->
+                        <li><a class="dropdown-item" href="flutter_flow.html">Flutter Flow</a></li>  <!--FlutterFlow-->
+                        <li><a class="dropdown-item" href="ibero.html">Ibero MODEVA</a></li> <!--Ibero MODEVA-->
+                        <li><a class="dropdown-item" href="techable.html">Techable Machine</a></li> <!--Techable Machine-->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!--Sección Principal-->
+    <section class="hero">
+        <img src="{{ url_for('static', filename='Images/YO.jpg')}}" alt="Foto de Diego (YO)" class="animate__animated animate__zoomIn"> <!--Mi foto con una animación de zoom-->
+        <h1 class="animate__animated animate__fadeInDown">Diego Navarro Sánchez</h1> <!--Mi nombre con una animación de desvanecimiento hacia abajo-->
+        <p class="animate__animated animate__fadeInUp">¡Hola! Soy Diego, tengo 18 años y soy de Guadalajara.</p> <!--El texto con una animación de desvanecimiento para arriba-->
+        <p class="animate__animated animate__fadeInUp">Al estar armando mi pc, cuando buscaba los componentes cuando iba entendiendo el funcionamiento de cada pieza, me di cuenta que me gustaba el mundo de las computadoras.</p> <!--texto con una animación de desvanecimiento para arriba-->
+        <p class="animate__animated animate__fadeInUp">Y ahora quiero entender el funcionamiento de cada cosa a la hora de abrir un programa, una página web, etc. Por eso decidí estudiar esta carrera</p> <!--texto con una animación de desvanecimiento para arriba-->
+    </section>
+
+    <!--Tarjetas de Hobbies y Gustos-->
+    <div class="card-container">
+        <div class="card animate-fadeInLeft"> <!--Animación para de desvanecimiento hacia la derecha-->
+            <h3>Hobbies</h3>
+            <ul>
+                <li>Jugar Videojuegos</li>
+                <li>Escuchar Música</li>
+                <li>Jugar Futbol</li>
+                <li>Hacer Gym</li>
+                <li>Programar</li>
+                <li>Estudiar</li>
+            </ul>
+        </div>
+
+        <div class="card animate-fadeInRight"> <!--Animación para desvanecimiento hacia la izquierda-->
+            <h3>Gustos</h3>
+            <ul>
+                <li>Edición de Videos</li>
+                <li>Videojuegos</li>
+                <li>Programar</li>
+                <li>Películas</li>
+                <li>Música</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer> <!--Pie de página-->
+        <p>&copy; 2024 Diego Navarro Sánchez. Todos los derechos reservados.</p> <!--Derechos del autor, o sea, yo :)-->
+    </footer>
+
+    <!-- Scripts de Bootstrap para funcionalidad y animaciones -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>

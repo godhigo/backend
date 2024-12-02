@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Techable Machine</title> <!--Título de la página-->
+    <style>
+        body {
+            background: linear-gradient(135deg, #b0b0b0, #343a40);
+            color: #343a40;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0; 
+        }
+
+        /*Configuración del navbar*/
+        .navbar {
+            background-color: #212529; /*Color de fondo*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /*Sombra*/
+        }
+
+        .navbar .nav-link {
+            color: #ffffff !important; /*Color de texto*/
+            transition: color 0.3s ease; 
+        }
+
+        .navbar .nav-link:hover {
+            color: #00d1b2 !important; /*Transición del color cuando pones el mouse encima de los títulos del navbar*/
+        }
+
+        .dropdown-menu {
+            background-color: #343a40; /*Fondo del dropdown*/
+        }
+
+        .dropdown-menu a {
+            color: #c4bebe !important; /* Color items del dropdown */
+        }
+
+        /*Estilo de la sección principal*/
+        .hero {
+            text-align: center; /*Centrando del texto*/
+            padding: 50px 0; /*Espaciado interno*/
+            background: rgba(0, 0, 0, 0.6); /*Fondo*/
+            color: white; /*Color de texto*/
+            animation: fadeIn 1.5s ease; /*Animación*/
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-top: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            max-width: 600px;
+            margin: 10px auto;
+            line-height: 1.6;
+        }
+
+        .model-container {
+            display: flex;
+            flex-direction: column; /* Alinea verticalmente */
+            align-items: center; /* Centra horizontalmente */
+            justify-content: center; /* Centra verticalmente */
+            gap: 20px; /* Espacio entre el texto y el modelo */
+            margin-top: 50px; /* Ajusta la posición en la página */
+            padding: 20px;
+            color: white; /* Color del texto */
+            text-align: center; /* Centra el texto */
+        }
+
+        .info-text {
+            max-width: 600px; /* Limita el ancho del texto para mejorar la legibilidad */
+            font-size: 1.2rem; /* Ajusta el tamaño de fuente */
+            line-height: 1.6; /* Mejora el espaciado entre líneas */
+        }
+
+        .div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+
+        /*Pie de página*/
+        footer {
+            background-color: #212529; /*Color del fondo del pie de página*/
+            color: white; /*Color de la letra*/
+            text-align: center; /*Alinear la inormación al centro*/
+            padding: 20px 0; /*Espacio superior e inferior*/
+            margin-top: auto; /*Empuja el footer hacia el final*/
+            width: 100%; /*Todo el ancho*/
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg p-2">
+    <div class="container d-flex justify-content-center"> <!--Centrar contenido -->
+        <a class="navbar-brand" href="index.html"> <!--Link del logo-->
+            <img src="{{ url_for('static', filename='Images/usuario.png')}}" alt="Logo" width="32"> <!--Logo del navbar-->
+        </a>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav"> <!--Lista de enlaces-->
+                <li class="nav-item"> 
+                    <a class="nav-link h5" href="index.html">Home</a> <!--Enlace a la página de inicio-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link h5" href="https://www.instagram.com/_godhi_/" target="_blank">Instagram</a> <!--Enlace a la página Instagram-->
+                </li>
+                <li class="nav-item dropdown"> <!--Dropdown (Lo que al pulsar en el se abre una selección)-->
+                    <a class="nav-link dropdown-toggle h5 ms-auto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tareas</a> <!--Nombre del dropdown (La opción que se ve al lado de Instagram y al que después de pulsar en él se abre la selección)-->     
+                    <ul class="dropdown-menu"> <!--Las opciones que vienen dentro del dropdown (La selección)-->
+                                    <!--Nombres de los apartados del dropdown-->
+                        <li><a class="dropdown-item" href="presentacion.html">Presentación</a></li> <!--Presentación-->
+                        <li><a class="dropdown-item" href="index_t1tarea2.html" target="_blank" rel="noopener noreferrer">Primer página</a></li>  <!--Primera página-->
+                        <li><a class="dropdown-item" href="git.html">GitHub</a></li>  <!--GitHub-->
+                        <li><a class="dropdown-item" href="vr.html">VR | AR</a></li>  <!--Realidad virtual-->
+                        <li><a class="dropdown-item" href="scan.html">Scan 3D</a></li> <!--Scan 3D-->
+                        <li><a class="dropdown-item" href="framework.html">Framework</a></li>  <!--Framework-->
+                        <li><a class="dropdown-item" href="hangman.html">Hangman</a></li> <!--Juego Ahorcados-->
+                        <hr class="dropdown-divider"> <!-- Línea divisora -->
+                        <li><a class="dropdown-item" href="entorno_virtual.html">Entorno Virtual</a></li> <!--Entorno virtual-->
+                        <hr class="dropdown-divider"> <!-- Línea divisora -->
+                        <li><a class="dropdown-item" href="flutter_flow.html">Flutter Flow</a></li>  <!--FlutterFlow-->
+                        <li><a class="dropdown-item" href="ibero.html">Ibero MODEVA</a></li> <!--Ibero MODEVA-->
+                        <li><a class="dropdown-item" href="techable.html">Techable Machine</a></li> <!--Techable Machine-->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!--Sección Principal-->
+    <section class="hero">
+        <h1 class="animate__animated animate__fadeInDown">Techable Machine</h1>
+        <p class="animate__animated animate__fadeInUp">Teachable Machine es una herramienta de Google que permite crear modelos de aprendizaje automático de forma rápida, sencilla y accesible</p>
+    </section>
+
+<!--Sección para Teachable Machine-->
+<div class="model-container">
+    <!--Texto explicativo-->
+    <div class="info-text">
+        <h2>¿Quieres probar mi modelo?</h2>
+        <p>
+            Usa tu cámara para identificar objetos como tu teléfono, un estuche o la nada. 
+            Este modelo está diseñado para reconocerlos en tiempo real. ¡Dale clic en "Iniciar" y pruébalo!
+        </p>
+    </div>
+
+<!--Techable Machine-->
+<div class="div">
+    <button type="button" onclick="init()">Iniciar</button>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "https://teachablemachine.withgoogle.com/models/PeMDoYLrY/";
+
+    let model, webcam, labelContainer, maxPredictions;
+
+    // Load the image model and setup the webcam
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append elements to the DOM
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop() {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    // run the webcam image through the image model
+    async function predict() {
+        // predict can take in an image, video or canvas html element
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
+    }
+</script>
+    
+
+    <!--Footer-->
+    <footer>
+        <p>&copy; 2024 Diego Navarro Sánchez. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Presentación</title> <!--Título de la página-->
+    <style>
+       body {
+            background: linear-gradient(135deg, #b0b0b0, #343a40); /*Fondo */
+            color: #343a40; /*Color de texto principal (cuerpo de la página)*/
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: #212529;  /*Color del fondo del navar*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /*Sombra*/
+        }
+        
+        .navbar .nav-link {
+            color: #ffffff !important; /*Color letra*/
+            transition: color 0.3s ease; /*Transición para el cambio de color*/
+        }
+
+        .navbar .nav-link:hover {
+            color: #00d1b2 !important; /*Transición del color cuando pones el mouse encima de los títulos del navbar*/
+        }
+        
+        .dropdown-menu {
+            background-color: #343a40; /*Fondo del dropdown*/
+        }
+
+        .dropdown-menu a {
+            color: #c4bebe !important; /*Color items del dropdown (Texto)*/
+        }
+
+        /* Espaciado */
+        .container {
+            padding: 15px;
+        }
+
+        /* Ajuste del logo */
+        .navbar-brand img {
+            width: 40px;
+            height: 40px; /* Ajuste del tamaño del logo */
+        }
+
+        /*Sección principal*/
+        .hero {
+            text-align: center; /*Centrar texto*/
+            padding: 50px 0; /*Espaciado vertical*/
+            background: rgba(0, 0, 0, 0.6); /*Fondo*/
+            color: white; /*Color texto*/
+            animation: fadeIn 1.5s ease; /*Efecto de animación*/
+        }
+
+        .shadow-box {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /*Sombra de alrededor*/
+            transition: transform 0.3s ease; /*Suaviza la animación*/
+            border-radius: 10px; /* Esquinas redondeadas */
+            overflow: hidden; /* Para que los bordes redondeados funcionen */
+        }
+
+        .shadow-box:hover {
+            transform: scale(1.05); /* Aumenta ligeramente al pasar el mouse */
+        }
+
+        /*Footer*/
+        footer {
+            background-color: #212529; /*Fondo obscuro*/
+            color: white; /*Color texto blanco*/
+            text-align: center; /*Centrar texto*/
+            padding: 20px 0; /*Espaciado interno*/
+            position: relative; /*Ajuste de contenido*/
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg p-2">
+    <div class="container d-flex justify-content-center"> <!--Centrar contenido -->
+        <a class="navbar-brand" href="index.html"> <!--Link del logo-->
+            <img src="{{ url_for('static', filename='Images/usuario.png')}}" alt="Logo" width="32"> <!--Logo del navbar-->
+        </a>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav"> <!--Lista de enlaces-->
+                <li class="nav-item"> 
+                    <a class="nav-link h5" href="index.html">Home</a> <!--Enlace a la página de inicio-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link h5" href="https://www.instagram.com/_godhi_/" target="_blank">Instagram</a> <!--Enlace a la página Instagram-->
+                </li>
+                <li class="nav-item dropdown"> <!--Dropdown (Lo que al pulsar en el se abre una selección)-->
+                    <a class="nav-link dropdown-toggle h5 ms-auto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tareas</a> <!--Nombre del dropdown (La opción que se ve al lado de Instagram y al que después de pulsar en él se abre la selección)-->     
+                    <ul class="dropdown-menu"> <!--Las opciones que vienen dentro del dropdown (La selección)-->
+                                    <!--Nombres de los apartados del dropdown-->
+                        <li><a class="dropdown-item" href="presentacion.html">Presentación</a></li> <!--Presentación-->
+                        <li><a class="dropdown-item" href="index_t1tarea2.html" target="_blank" rel="noopener noreferrer">Primer página</a></li>  <!--Primera página-->
+                        <li><a class="dropdown-item" href="git.html">GitHub</a></li>  <!--GitHub-->
+                        <li><a class="dropdown-item" href="vr.html">VR | AR</a></li>  <!--Realidad virtual-->
+                        <li><a class="dropdown-item" href="scan.html">Scan 3D</a></li> <!--Scan 3D-->
+                        <li><a class="dropdown-item" href="framework.html">Framework</a></li>  <!--Framework-->
+                        <li><a class="dropdown-item" href="hangman.html">Hangman</a></li> <!--Juego Ahorcados-->
+                        <hr class="dropdown-divider"> <!-- Línea divisora -->
+                        <li><a class="dropdown-item" href="entorno_virtual.html">Entorno Virtual</a></li> <!--Entorno virtual-->
+                        <hr class="dropdown-divider"> <!-- Línea divisora -->
+                        <li><a class="dropdown-item" href="flutter_flow.html">Flutter Flow</a></li>  <!--FlutterFlow-->
+                        <li><a class="dropdown-item" href="ibero.html">Ibero MODEVA</a></li> <!--Ibero MODEVA-->
+                        <li><a class="dropdown-item" href="techable.html">Techable Machine</a></li> <!--Techable Machine-->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Sección Principal -->
+    <section class="hero">
+        <h1 class="animate__animated animate__fadeInDown">Presentación</h1> <!--Encabezado con animación-->
+    </section>
+
+    <div class="container mt-4">
+        <div class="shadow-box"> <!--Sombra de la caja-->
+            <iframe src="{{ url_for('static', filename= 'Docs/Stack overflow.pdf')}}" width="100%" height="600px" frameborder="0"></iframe> <!--Presentación-->
+        </div>
+    </div>
+
+    <!--Pie de página-->
+    <footer>
+        <p>&copy; 2024 Diego Navarro Sánchez. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts de Bootstrap para funcionalidad y animaciones -->  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
